@@ -1,0 +1,19 @@
+{
+  "name": "playwrightudemy",
+  "version": "1.0.0",
+  "description": "Playwright E2E test with AI capabilities Incl MCP",
+  "keywords": [
+    "playwright",
+    "Playwrigh-e2e-test",
+    "playwright-MCP"
+  ],
+  "license": "ISC",
+  "author": "Krishna Automation",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
