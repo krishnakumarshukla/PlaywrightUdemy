@@ -11,7 +11,9 @@
   "author": "Krishna Automation",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "login": "npx playwright test tests/demo/recording.spec.js --headed"
+  },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0"
