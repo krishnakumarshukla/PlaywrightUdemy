@@ -12,10 +12,15 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "login": "npx playwright test tests/demo/recording.spec.js --headed"
+    "login": "npx playwright test tests/demo/recording.spec.js --headed",
+    "make-appointment": "npx playwright test tests/functional/makeAppointment.spec.js --headed",
+    "globalsetup_demo": "npx playwright test /tests/demo/mytest.spec.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.11.0",
+    "dotenv": "^18.0.6"
   }
 }
