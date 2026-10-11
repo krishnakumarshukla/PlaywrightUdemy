@@ -4,8 +4,8 @@ test.describe("Login Tests Functionality", () => {
   test.beforeEach(
     "Navigate to application and click on Make Appointment",
     async ({ page }) => {
-      await page.goto("https://katalon-demo-cura.herokuapp.com/", { timeout: 10000 });
-      await page.getByRole("link", { name: "Make Appointment" }).click({timeout: 5000 });
+      await page.goto("https://katalon-demo-cura.herokuapp.com/" );
+      await page.getByRole("link", { name: "Make Appointment" }).click();
       await page.getByLabel("Username").click();
     },
   );
@@ -35,4 +35,7 @@ test.describe("Login Tests Functionality", () => {
     await page.waitForTimeout(5000);
     await page.close();
   });
+
+
+
 });

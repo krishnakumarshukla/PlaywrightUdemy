@@ -14,7 +14,10 @@
   "scripts": {
     "login": "npx playwright test tests/demo/recording.spec.js --headed",
     "make-appointment": "npx playwright test tests/functional/makeAppointment.spec.js --headed",
-    "globalsetup_demo": "npx playwright test /tests/demo/mytest.spec.js"
+    "global_demo": "npx playwright test /tests/demo/mytest.spec.js",
+    "device_demo": "npx playwright test /tests/demo/mytestDemo.spec.js --headed",  
+    "parallelTest": "npx playwright test --grep @parallel --headed"
+    
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

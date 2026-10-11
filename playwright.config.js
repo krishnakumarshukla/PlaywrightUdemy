@@ -1,13 +1,13 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-import dotenv from 'dotenv';
-import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -23,8 +23,9 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  expect: {timeout: 10_000},
-  globalSetup: require.resolve("./tests/helpers/global.setup.js"),
+  expect: { timeout: 10_000 },
+  globalSetup: require.resolve("./tests/helpers/global-setup.js"),
+  globalTeardown: require.resolve("./tests/helpers/global-teardown.js"),
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
@@ -96,6 +97,13 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    {
+      name: "iPhone 12 Pro",
+      use:{
+        ...devices["iPhone 12 Pro"],
+      }
+    }
   ],
 
   /* Run your local dev server before starting the tests */
@@ -105,4 +113,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
